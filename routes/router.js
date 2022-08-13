@@ -43,7 +43,7 @@ router.post("/register", upload.single('profilePic'), async (req, res) => {
         const preuser = await userdb.findOne({ email: email });
 
         if (preuser) {
-            res.status(422).json({ error: "This Email is Already Exist" })
+            res.status(409).json({ error: "This Email is Already Exist" })
         } else if (password !== cpassword) {
             res.status(422).json({ error: "Password and Confirm Password Not Match" })
         } else {
