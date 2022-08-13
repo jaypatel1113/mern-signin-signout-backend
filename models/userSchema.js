@@ -49,7 +49,6 @@ const userSchema = new mongoose.Schema({
 
 
 
-
 // hash password
 
 userSchema.pre("save", async function (next) {
