@@ -4,7 +4,7 @@ const app = express();
 const router = require("./routes/router");
 const cors = require("cors");
 const cookiParser = require("cookie-parser")
-const port = process.env.PORT || 8009;
+const port = process.env.PORT || 5000;
 
 require("./db/conn");
 
@@ -19,6 +19,6 @@ app.use('/public', express.static('public'));
 
 app.use(router);
 
-app.listen(port,()=>{
+app.listen(port, () => {
     console.log(`server start at port no : ${port}`);
 });
